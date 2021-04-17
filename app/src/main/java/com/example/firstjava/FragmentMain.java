@@ -29,14 +29,14 @@ public class FragmentMain extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Log.i("12","12");
-        switch (v.getId()){
+        Log.i("12", "12");
+        switch (v.getId()) {
             case R.id.button:
                 break;
             case R.id.button2:
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Schedule scheduleFragment = new Schedule();
-                ft.add(R.id.frame_layout,scheduleFragment);
+                ft.add(R.id.frame_layout, scheduleFragment);
                 ft.addToBackStack(null);
                 ft.commit();
                 break;

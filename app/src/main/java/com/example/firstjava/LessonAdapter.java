@@ -9,9 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class LessonAdapter extends  RecyclerView.Adapter<ViewHolder>{
+import java.util.ArrayList;
+import java.util.List;
 
-
+public class LessonAdapter extends RecyclerView.Adapter<ViewHolder> {
+    List<DataBD> data;
+    int pos;
+    LessonAdapter(ArrayList<DataBD> data){
+        this.data=data;
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -21,13 +27,12 @@ public class LessonAdapter extends  RecyclerView.Adapter<ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.lesson.setText("Хуй");
-        holder.time.setText("Хуй 2");
-
+        holder.lesson.setText(data.get(position).lesson_name);
+        holder.time.setText(String.valueOf(data.get(position).number_lesson));
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return data.size();
     }
 }

@@ -1,5 +1,7 @@
 package com.example.firstjava;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -18,6 +20,9 @@ public class FragmentPager extends FragmentPagerAdapter {
         super(fm);
         for (int i = 0; i < 5; i++) {
             week.add(new Day());
+            Bundle bundle =new Bundle();
+            bundle.putInt("position",i);
+            week.get(i).setArguments(bundle);
         }
     }
 
